@@ -21,8 +21,8 @@ Vagrant.configure("2") do |config|
 
   # Give the guest OS access to the user's home dir for .ssh keys and so on.
   # Enable nfs for faster performance. Ignored on Windows host.
-  config.vm.synced_folder "./vagrant/", "/vagrant", nfs: true
-  config.vm.synced_folder "./source/", "/home/vagrant", nfs: true
+  # config.vm.synced_folder "./vagrant/", "/vagrant", nfs: true
+  # config.vm.synced_folder "./source/", "/home/vagrant/source", nfs: true
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -40,6 +40,6 @@ Vagrant.configure("2") do |config|
   # information on available options.
 
   # For now we'll use basic shell provisioning script:
-  config.vm.provision :shell, :path => "vagrant/provision/provision.sh", privileged: false
+  config.vm.provision :shell, :path => "provision/scripts/bootstrap.sh", privileged: false
 
 end

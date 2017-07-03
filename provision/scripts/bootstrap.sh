@@ -16,19 +16,16 @@ echo "127.0.0.1 ng4box.local" | sudo tee --append /etc/hostname > /dev/null
 sudo hostname ng4box
 
 # Install core components
-/vagrant/provision/core.sh
+/provision/scripts/core.sh
 
 # Install tolls components
-/vagrant/provision/tools.sh
+/provision/scripts/tools.sh
 
 # Install dot files components
-/vagrant/provision/dotfiles.sh
+/provision/scripts/dotfiles.sh
 
 # Install Node.js
-/vagrant/provision/nodejs.sh
-
-# Travis-CI toolbelt:
-/vagrant/provision/travis.sh
+/provision/scripts/nodejs.sh
 
 sudo touch /etc/vagrant-provisioned
 
